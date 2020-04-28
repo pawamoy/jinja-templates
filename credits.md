@@ -3,7 +3,7 @@
 -->
 
 # Credits
-These projects were used to build `[[ project_name ]]`. **Thank you!**
+These projects were used to build `{{ project_name }}`. **Thank you!**
 
 [`python`](https://www.python.org/) |
 [`poetry`](https://poetry.eustace.io/) |
