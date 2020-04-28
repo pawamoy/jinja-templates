@@ -4,7 +4,7 @@
 {{ main_usage }}
 ```
 
-Commands:
+{% if commands %}Commands:
 
 {% for command in commands %}
 - [`{{ command.name }}`](#{{ command.name }}){% endfor %}
@@ -17,4 +17,5 @@ Commands:
 ```
 {{ command.usage }}
 ```
-{% endfor %}
+{% endfor %}{% endif %}
+
