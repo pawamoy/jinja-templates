@@ -12,17 +12,17 @@ These projects were used to build `[[ project_name ]]`. **Thank you!**
 [`copier-poetry`](https://github.com/pawamoy/copier-poetry)
 
 ### Direct dependencies
-{% raw %}{%- for dep in direct_dependencies -%}
+{%- for dep in direct_dependencies -%}
 {%- with package = package_info.get(dep, {}) %}
 [`{{ package.get("name", dep) }}`]({{ package.get("home-page", "") }}){% if not loop.last %} |{% endif %}
 {%- endwith -%}
-{%- endfor %}{% endraw %}
+{%- endfor %}
 
 ### Indirect dependencies
-{% raw %}{%- for dep in indirect_dependencies -%}
+{%- for dep in indirect_dependencies -%}
 {%- with package = package_info.get(dep, {}) %}
 [`{{ package.get("name", dep) }}`]({{ package.get("home-page", "") }}){% if not loop.last %} |{% endif %}
 {%- endwith -%}
-{%- endfor %}{% endraw %}
+{%- endfor %}
 
 **[More credits from the author](http://pawamoy.github.io/credits/)**
