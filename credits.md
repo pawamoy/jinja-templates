@@ -1,7 +1,5 @@
-<!--
-IMPORTANT:
-  This file is generated from the template at 'scripts/templates/CREDITS.md'.
-  Please update the template instead of this file.
+<!-- Template repository: https://github.com/pawamoy/jinja-templates
+     Template path: credits.md
 -->
 
 # Credits
