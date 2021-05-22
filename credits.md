@@ -3,21 +3,26 @@
 -->
 
 # Credits
-
-These projects were used to build *[[ project_name ]]*. **Thank you!**
+These projects were used to build `{{ project_name }}`. **Thank you!**
 
 [`python`](https://www.python.org/) |
-[`pdm`](https://pdm.fming.dev/) |
-[`copier-pdm`](https://github.com/pawamoy/copier-pdm)
+[`poetry`](https://poetry.eustace.io/) |
+[`copier-poetry`](https://github.com/pawamoy/copier-poetry)
 
 ### Direct dependencies
-
-{{ cite_packages(package_info, direct_dependencies) }}
+{%- for dep in direct_dependencies -%}
+{%- with package = package_info.get(dep, {}) %}
+[`{{ package.get("name", dep) }}`]({{ package.get("home-page", "") }}){% if not loop.last %} |{% endif %}
+{%- endwith -%}
+{%- endfor %}
 
 ### Indirect dependencies
+{%- for dep in indirect_dependencies -%}
+{%- with package = package_info.get(dep, {}) %}
+[`{{ package.get("name", dep) }}`]({{ package.get("home-page", "") }}){% if not loop.last %} |{% endif %}
+{%- endwith -%}
+{%- endfor %}
+{%- if more_credits %}
 
-{{ cite_packages(package_info, indirect_dependencies) }}
-[%- if author_username == "pawamoy" %]
-
-**[More credits from the author](http://pawamoy.github.io/credits/)**
-[%- endif %]
+**[More credits from the author]({{ more_credits }})**
+{%- endif %}
