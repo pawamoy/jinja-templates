@@ -6,21 +6,17 @@
 These projects were used to build `{{ project_name }}`. **Thank you!**
 
 [`python`](https://www.python.org/) |
-[`poetry`](https://poetry.eustace.io/) |
-[`copier-poetry`](https://github.com/pawamoy/copier-poetry)
+[`pdm`](https://pdm.fming.dev/) |
+[`copier-pdm`](https://github.com/pawamoy/copier-pdm)
 
 ### Direct dependencies
 {%- for dep in direct_dependencies -%}
-{%- with package = package_info.get(dep, {}) %}
-[`{{ package.get("name", dep) }}`]({{ package.get("home-page", "") }}){% if not loop.last %} |{% endif %}
-{%- endwith -%}
+[`{{ dep }}`](https://pypi.org/project/{{ dep }}/){% if not loop.last %} |{% endif %}
 {%- endfor %}
 
 ### Indirect dependencies
 {%- for dep in indirect_dependencies -%}
-{%- with package = package_info.get(dep, {}) %}
-[`{{ package.get("name", dep) }}`]({{ package.get("home-page", "") }}){% if not loop.last %} |{% endif %}
-{%- endwith -%}
+[`{{ dep }}`](https://pypi.org/project/{{ dep }}/){% if not loop.last %} |{% endif %}
 {%- endfor %}
 {%- if more_credits %}
 
