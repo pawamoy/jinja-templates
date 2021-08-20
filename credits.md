@@ -3,6 +3,7 @@
 -->
 
 # Credits
+
 These projects were used to build `{{ project_name }}`. **Thank you!**
 
 [`python`](https://www.python.org/) |
@@ -10,12 +11,14 @@ These projects were used to build `{{ project_name }}`. **Thank you!**
 [`copier-pdm`](https://github.com/pawamoy/copier-pdm)
 
 ### Direct dependencies
-{%- for dep in direct_dependencies -%}
+
+{% for dep in direct_dependencies -%}
 [`{{ dep }}`](https://pypi.org/project/{{ dep }}/){% if not loop.last %} |{% endif %}
 {%- endfor %}
 
 ### Indirect dependencies
-{%- for dep in indirect_dependencies -%}
+
+{% for dep in indirect_dependencies -%}
 [`{{ dep }}`](https://pypi.org/project/{{ dep }}/){% if not loop.last %} |{% endif %}
 {%- endfor %}
 {%- if more_credits %}
